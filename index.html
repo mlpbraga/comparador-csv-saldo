@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Arquivos CSV</title>
+    <!-- Inclua a CDN do Bootstrap para estilização -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f4f7;
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        #divergencias {
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="mb-4">Comparador de Arquivos CSV</h2>
+    <div class="mb-3">
+        <label for="upload-file1" class="form-label" style="font-weight: bold;">Carregar Arquivo CSV do Saldo da Conta:</label>
+        <input type="file" class="form-control" id="upload-file1" accept=".csv" style="height: auto;">
+    </div>
+    <div class="mb-3">
+        <label for="upload-file2" class="form-label" style="font-weight: bold;">Carregar Arquivo CSV do Sistema de Vendas:</label>
+        <input type="file" class="form-control" id="upload-file2" accept=".csv" style="height: auto;">
+    </div>
+
+    <div class="container">
+        <div id="saldos" class="mb-3"></div>
+    
+        <div class="button-container text-center mb-3">
+            <button id="compare-button" class="btn btn-primary" disabled>Comparar</button>
+        </div>
+    
+        <div id="divergencias" class="bg-light"></div>
+    </div>
+    
+</div>
+
+<script src="script.js"></script>
+<!-- Opção para incluir jQuery e Popper.js para Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
